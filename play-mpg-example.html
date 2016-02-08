@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jsmpeg play mpg</title>
+  <style>
+    body {
+      background: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    canvas[video] {
+      width: 1280;
+      height: 720px;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas video></canvas>
+
+  <script src="jsmpg-proto-opt.js"></script>
+  <script>
+
+    var url = 'mind-blown.mpg';
+    var canvas = document.querySelector('canvas[video]');
+    var player = new jsmpeg(url, {canvas: canvas, autoplay: true, loop: true});
+
+    player.pause();
+    player.play();
+    player.stop();
+
+  </script>
+</body>
+</html>
